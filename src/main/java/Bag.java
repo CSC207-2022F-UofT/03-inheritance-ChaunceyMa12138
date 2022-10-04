@@ -22,6 +22,7 @@ public abstract class Bag {
 
 
 
+
     /*
      * TODO: Create a constructor that takes two arguments:
      *       - a String representing the Bag's colour
@@ -34,6 +35,8 @@ public abstract class Bag {
     public Bag (String BagColor, int BagCapacity){
         this.color = BagColor;
         this.capacity = BagCapacity;
+        this.numberOfContents = 0;
+        this.contents = new String[capacity];
     }
 
 
@@ -82,10 +85,10 @@ public abstract class Bag {
      */
     public Boolean addItem(String NewItem){
         if (numberOfContents < capacity){
-            contents[numberOfContents] = NewItem;
-            numberOfContents += 1;
-            return true;
-        }
+                contents[numberOfContents] = NewItem;
+                numberOfContents += 1;
+                return true;
+            }
         return false;
     }
 
